@@ -27,7 +27,7 @@ class Lexicorn
 	{
 		$this->_root = $root;
 		if($lang===null){
-			$conf = self::_getData($root.'/lxconf.ini');
+			$conf = parse_ini_file($root.'/lxconf.ini', true);
 			$lang = $conf['general']['base_lang'];
 		}
 		$lxn = $root."/.lexicorn/tree.{$lang}";
